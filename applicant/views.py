@@ -14,3 +14,6 @@ def displayApplicantPageView(request) :
 def addApplicantPageView(request) :
     return HttpResponse('Add Applicant View')
 
+def addApplicationPageView(request) :
+    return render(request,'applicant/newindex.html')
+
