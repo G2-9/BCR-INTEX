@@ -5,6 +5,9 @@ from django.http import HttpResponse
 def indexPageView(request) :
     return render(request, 'applicant/newindex.html')
 
+def registerPageView(request) :
+    return render(request, 'applicant/register.html')
+
 def searchApplicantPageView(request) :
     return HttpResponse('Search Applicant View')
 
