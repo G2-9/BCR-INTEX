@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class listing(models.Model) :
+class Listing(models.Model) :
     listing_id = models.IntegerField(primary_key=True)
     status = models.CharField(max_length=20)
     city = models.CharField(max_length=100)
