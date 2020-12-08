@@ -8,6 +8,9 @@ def indexPageView(request) :
 def aboutUsPageView(request) :
     return render(request, 'homepages/about.html')
 
+def aboutUs2PageView(request) :
+    return render(request, 'homepages/about2.html')
+
 def contactUsPageView(request) :
     return render(request, 'homepages/contact.html')
     
