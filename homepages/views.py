@@ -10,3 +10,6 @@ def aboutUsPageView(request) :
 
 def contactUsPageView(request) :
     return render(request, 'homepages/contact.html')
+    
+def contactUs2PageView(request) :
+    return render(request, 'homepages/contact2.html')
