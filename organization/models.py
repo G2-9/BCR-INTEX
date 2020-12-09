@@ -20,7 +20,7 @@ class Offer(models.Model) :
     job_title = models.CharField(max_length=100)
     organization_id = models.ForeignKey("Organization", on_delete=models.DO_NOTHING)
     contracts = models.CharField(max_length=50)
-    matching_skills = models.IntegerField
+    matching_skills = models.IntegerField(default=0)
 
     def __str__(self) :
         return (self.offer_id + ' - ' + self.job_title)
