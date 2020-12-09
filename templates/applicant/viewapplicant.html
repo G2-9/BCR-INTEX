@@ -1,0 +1,15 @@
+{% extends 'applicantBase.html' %}
+{% load static %}
+{% block newcontent %}
+    {% for applicant in all_applicants %}
+        {% if applicant.first_name == 'mickey' %}
+        <ul>
+            <li>{{ applicant.first_name }}</li>
+            <li>{{ applicant.last_name }}</li>
+            <li>{{ applicant.username }}</li>
+            <li>{{ applicant.email }}</li>
+        </ul>
+        {% endif %}
+    {% endfor %}
+    <br><br><br><br><br><br>
+{% endblock %}
