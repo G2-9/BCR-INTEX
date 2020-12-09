@@ -19,7 +19,7 @@
     .colorwhite {
         color: whitesmoke;
     }
-    button {
+    .abutton {
         position: absolute;
         bottom: 10%;
         width: 25%;
@@ -31,7 +31,7 @@
         color: whitesmoke;
     }
 
-        button:hover {
+        .abutton:hover {
             background-color: black;
             font-weight: 600;
             cursor: pointer;
@@ -43,7 +43,7 @@
                 <h5 class='colorwhite'><span style='color: rgb(200,200,200);'>Username:</span> {{ new_applicant.username | lower}}</h5>
                 <h5 class='colorwhite'><span style='color: rgb(200,200,200);'>Email:</span> {{ new_applicant.email | lower }}</h5>
         </p>
-        <button onclick="location.href='{% url 'listings_index' %}'">Search for jobs</button>
+        <button onclick="location.href='{% url 'listings_index' %}'" class='abutton'>Search for jobs</button>
     </div>
     <br><br><br><br><br><br>
 {% endblock %}
