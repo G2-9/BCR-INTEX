@@ -24,4 +24,4 @@ class Offer(models.Model) :
     matching_skills = models.IntegerField(default=0)
 
     def __str__(self) :
-        return (self.offer_id + ' - ' + self.job_title)
+        return (str(self.offer_id) + ' - ' + self.job_title)
