@@ -1,0 +1,47 @@
+{% extends 'applicantBase.html' %}
+{% block newcontent %}
+<style>
+    .formbox {
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        left: 25%;
+        top: 25%;
+        border: 1px solid rgb(20,20,20);
+        border_radius: 10px;
+        box-shadow: 0 0 10px 0 rgb(20,20,20);
+        padding: 40px 0 0 0px;
+        text-align: center;
+    }
+    
+    .dbutton {
+        position: absolute;
+        background-color: rgb(34,139,34);
+        color: whitesmoke;
+        border: 1px solid black;
+        box-shadow: 0 2px 2px 0 rgb(100,100,100);
+        border-radius: 10px;
+        width: 20%;
+        height: 10%;
+        font-weight: bold;
+        right: 40%;
+    }
+    .dbutton:hover {
+        cursor: pointer;
+
+    }
+</style>
+<form class='formbox'>
+    {% csrf_token %}
+    <label for='first_name'>Enter the first name:</label>
+    <input type="text" name='first_name' id='first_name'>
+    <br><br>
+    <label for='last_name'>Enter the last name:</label>
+    <input type="text" name='last_name' id='last_name'> 
+    <br><br>     
+    <label for='username'>Enter the username:</label>
+    <input type="text" name="username" id='username'>
+    <br><br>
+    <button type="submit" class='dbutton'>Search</button>
+</form> 
+{% endblock %}
