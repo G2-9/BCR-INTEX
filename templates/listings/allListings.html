@@ -1,4 +1,9 @@
 {% extends 'applicantBase.html' %}
 {% block newcontent %}
-<h1>all listings</h1>
+<h1>listings page</h1>
+<ul>
+    {% for i in list %}
+        <li><h1>{{ i }}</h1></li>
+    {% endfor %}
+</ul>
 {% endblock %}
