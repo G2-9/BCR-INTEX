@@ -27,8 +27,8 @@
         justify-content: center;
         align-items: center;
         background: #fff;
-        width: 80%;
-        left: 10%;
+        width: 70%;
+        left: 15%;
         text-align: center;
     }
     form {
@@ -135,14 +135,16 @@
 </style>
     <div class="main-block">
         <form action="/">
-            <h1 style='margin-top: 20px; color: rgb(20,20,20);'>Create a free account</h1>
+            <h1 style='margin-top: 20px; color: rgb(20,20,20);'>Create a Company Account</h1>
             <div>
-                <label></label><input type="text" name="first_name" placeholder='First Name*' required>
-                <label></label><input type="text" name="last_name" placeholder='Last Name*' required>
-                <label></label><input type="text" name="username" placeholder='Username*' required>
-                <label></label><input type="text" name="email" placeholder='Email*' required>
+                <label></label><input type="text" name="company_name" placeholder='Company Name*' required>
+                <label></label><input type="text" name="company_email" placeholder='Company Email*' required>
+                <label></label><input type="text" name="company_phone" placeholder='Company Phone Number*' required> 
+                <label></label><input type="text" name="company_streetadd" placeholder='Street Address*' required>
+                <label></label><input type="text" name="company_city" placeholder='City' required>
+                <label></label><input type="text" name="company_zip" placeholder='Zip/Postal Code' required>
             </div>
-            <fieldset class="group" style='border: none;'> 
+            <fieldset class="group" style='border: none;'>
                 <p class="top-info">These listed hard and soft skills are top picks for employers today. To help match you with the right companies, please select your top three in each category.</p>
                 <div style='position: relative; float: left; width: 50%;'>
                 <legend>Hard Skills</legend> 
