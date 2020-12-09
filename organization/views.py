@@ -52,7 +52,7 @@ def addListingPageView(request) :
         new_listing.city = request.POST.get('city')
         new_listing.compensation = request.POST.get('compensation')
         new_listing.company_website = request.POST.get('company_website')
-        new_listing.listing_id = (random.randint(209,10000))   # had to input an applicant_id FIX ME: AUTOFILL PK
+        new_listing.listing_id = (random.randint(209,10000))   # had to manually input an id FIX ME: AUTOFILL PK
 
         new_listing.save()
 
