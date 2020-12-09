@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 import random
 from applicant.models import Applicant
 
@@ -17,9 +18,10 @@ def searchApplicantsPageView(request) :
     return render(request, 'applicant/searchapplicant.html')
 
 def removeApplicantPageView(request) :
-    applicant = Applicant.objects.get(first_name=request.GET['first_name'], last_name=request.GET['last_name'], username=request.GET['username'])
+    applicant = Applicant.objects.get(first_name=request.POST['first_name'], last_name=request.POST['last_name'], username=request.POST['username'])
     applicant.delete()
-    
+
+    return HttpResponseRedirect("/applicant/")    
 
 def displayApplicantPageView(request) :
     return HttpResponse('Display Applicant View')

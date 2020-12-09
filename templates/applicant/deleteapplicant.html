@@ -21,18 +21,19 @@
         border: 1px solid black;
         box-shadow: 0 2px 2px 0 rgb(100,100,100);
         border-radius: 10px;
-        width: 20%;
+        width: 30%;
         height: 10%;
         font-weight: bold;
-        right: 40%;
+        right: 33%;
         bottom: 15%;
     }
+    
     .dbutton:hover {
         cursor: pointer;
 
     }
 </style>
-<form name="form" method="post" action="{% url 'remove_applicant' %}" class='formbox'>
+<form name="form" method="POST" action="{% url 'remove_applicant' %}" class='formbox'>
     {% csrf_token %}
     <label for='first_name'>Enter the first name:</label>
     <input type="text" name='first_name' id='first_name'>
@@ -43,6 +44,6 @@
     <label for='username'>Enter the username:</label>
     <input type="text" name="username" id='username'>
     <br><br>
-    <button type="submit" class='dbutton'>Delete</button>
+    <button type="submit" class='dbutton'>Delete Applicant</button>
 </form> 
 {% endblock %}
