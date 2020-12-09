@@ -137,7 +137,8 @@
     }
 </style>
     <div class="main-block">
-        <form action="/">
+        <form name='form_applicant_register' method='POST' action="{% url 'add_applicant' %}">
+            {% csrf_token %}
             <h1 style='margin-top: 20px; color: rgb(20,20,20);'>Create a free account</h1>
             <div style='margin-right: 23%;'>
                 <label></label><input type="text" name="first_name" placeholder='First Name*' required>
@@ -178,7 +179,7 @@
                     </ul> 
                 </div>
                 </fieldset> 
-            <button type="submit" href="/" style='margin: 30px 0 100px 0;'>Submit</button>
+            <button type="submit" style='margin: 30px 0 100px 0;'>Submit</button>
         </form>
     </div>
 {% endblock %}
