@@ -13,7 +13,7 @@ class Listing(models.Model) :
     status = models.CharField(max_length=20)
     city = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
-    organization_id = models.IntegerField
+    organization_id = models.IntegerField(default=0)
     contracts = models.CharField(max_length=50)
     description = models.CharField(max_length=9000)
     required_skills = models.ManyToManyField('Skill')
