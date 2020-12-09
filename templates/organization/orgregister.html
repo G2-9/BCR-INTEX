@@ -1,4 +1,4 @@
-{% extends 'organizationBase.html' %}
+{% extends 'applicantBase.html' %}
 {% load static %}
 {% block newcontent %}
 <style>
@@ -144,35 +144,36 @@
                 <label></label><input type="text" name="company_city" placeholder='City' required>
                 <label></label><input type="text" name="company_zip" placeholder='Zip/Postal Code' required>
             </div>
-            <fieldset class="group">
-                <div>
-                <legend>Soft Skills</legend> 
+            <fieldset class="group" style='border: none;'>
+                <p class="top-info">Research and collaboration has shown that these 10 soft/10 hard skills are labels that employers can use to find the best candidates. Please select three from each set to best describe candidates you would like to hire.</p>
+                <div style='position: relative; float: left; width: 50%;'>
+                <legend>Hard Skills</legend> 
                     <ul class="checkbox"> 
-                        <li><input type="checkbox" id="cb1" value="mobile" /><label for="cb1">x</label></li> 
-                        <li><input type="checkbox" id="cb2" value="ecommerce" /><label for="cb2">x</label></li> 
-                        <li><input type="checkbox" id="cb3" value="documentati" /><label for="cb3">x</label></li> 
-                        <li><input type="checkbox" id="cb4" value="x" /><label for="cb4">x</label></li> 
-                        <li><input type="checkbox" id="cb5" value="x" /><label for="cb5">x</label></li> 
-                        <li><input type="checkbox" id="cb6" value="x" /><label for="cb6>">x</label></li>  
-                        <li><input type="checkbox" id="cb7" value="x" /><label for="cb7>">x</label></li> 
-                        <li><input type="checkbox" id="cb8" value="x" /><label for="cb8>">x</label></li> 
-                        <li><input type="checkbox" id="cb9" value="x" /><label for="cb9>">x</label></li> 
-                        <li><input type="checkbox" id="cb10" value="x" /><label for="cb10>">x</label></li> 
+                        <li><input type="checkbox" id="cb1" value="mobile" /><label for="cb1">Mobile</label></li> 
+                        <li><input type="checkbox" id="cb2" value="ecommerce" /><label for="cb2">E-Commerce</label></li> 
+                        <li><input type="checkbox" id="cb3" value="documentation" /><label for="cb3">Documentation</label></li> 
+                        <li><input type="checkbox" id="cb4" value="microsoft" /><label for="cb4">Microsoft</label></li> 
+                        <li><input type="checkbox" id="cb5" value="sas" /><label for="cb5">SAS</label></li> 
+                        <li><input type="checkbox" id="cb6" value="telecom" /><label for="cb6>">Telecom</label></li>  
+                        <li><input type="checkbox" id="cb7" value="sql" /><label for="cb7>">SQL</label></li> 
+                        <li><input type="checkbox" id="cb8" value="http" /><label for="cb8>">HTTP</label></li> 
+                        <li><input type="checkbox" id="cb9" value="analytics" /><label for="cb9>">Analytics</label></li> 
+                        <li><input type="checkbox" id="cb10" value="linux" /><label for="cb10>">Linux</label></li> 
                     </ul> 
                 </div>
                 <div>
-                <legend>Hard Skills</legend>
+                <legend>Soft Skills</legend>
                     <ul class="checkbox"> 
-                        <li><input type="checkbox" id="cb11" value="x" /><label for="cb11">x</label></li> 
-                        <li><input type="checkbox" id="cb12" value="x" /><label for="cb12">x</label></li> 
-                        <li><input type="checkbox" id="cb13" value="x" /><label for="cb13">x</label></li> 
-                        <li><input type="checkbox" id="cb14" value="x" /><label for="cb14">x</label></li> 
-                        <li><input type="checkbox" id="cb15" value="x" /><label for="cb15">x</label></li> 
-                        <li><input type="checkbox" id="cb16" value="x" /><label for="cb16>">x</label></li> 
-                        <li><input type="checkbox" id="cb17" value="x" /><label for="cb17>">x</label></li> 
-                        <li><input type="checkbox" id="cb18" value="x" /><label for="cb18>">x</label></li> 
-                        <li><input type="checkbox" id="cb19" value="x" /><label for="cb19>">x</label></li> 
-                        <li><input type="checkbox" id="cb20" value="x" /><label for="cb20>">x</label></li>         
+                        <li><input type="checkbox" id="cb11" value="communication" /><label for="cb11">Communication</label></li> 
+                        <li><input type="checkbox" id="cb12" value="selfstarting" /><label for="cb12">Self-Starting</label></li> 
+                        <li><input type="checkbox" id="cb13" value="reporting" /><label for="cb13">Reporting</label></li> 
+                        <li><input type="checkbox" id="cb14" value="collaboration" /><label for="cb14">Collaboration</label></li> 
+                        <li><input type="checkbox" id="cb15" value="innovation" /><label for="cb15">Innovation</label></li> 
+                        <li><input type="checkbox" id="cb16" value="consulting" /><label for="cb16>">Consulting</label></li> 
+                        <li><input type="checkbox" id="cb17" value="passion" /><label for="cb17>">Passion</label></li> 
+                        <li><input type="checkbox" id="cb18" value="leadership" /><label for="cb18>">Leadership</label></li> 
+                        <li><input type="checkbox" id="cb19" value="coaching" /><label for="cb19>">Coaching</label></li> 
+                        <li><input type="checkbox" id="cb20" value="design" /><label for="cb20>">Design</label></li>         
                     </ul> 
                 </div>
                 </fieldset> 
