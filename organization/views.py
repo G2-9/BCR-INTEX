@@ -13,3 +13,6 @@ def displayOrganizationPageView(request) :
 
 def addOrganizationPageView(request) :
     return HttpResponse('Add Organization View')
+
+def registerOrganizationPageView(request) :
+    return render(request, 'organization/orgregister.html')
