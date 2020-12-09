@@ -17,6 +17,7 @@ class Offer(models.Model) :
     offer_id = models.IntegerField(primary_key=True)
     applicant_id = models.ForeignKey("applicant.Applicant", on_delete=models.DO_NOTHING)
     status = models.CharField(max_length=20)
+    city = models.CharField(max_length=100, default="Provo")
     job_title = models.CharField(max_length=100)
     organization_id = models.ForeignKey("Organization", on_delete=models.DO_NOTHING)
     contracts = models.CharField(max_length=50)
