@@ -16,3 +16,6 @@ def addOrganizationPageView(request) :
 
 def registerOrganizationPageView(request) :
     return render(request, 'organization/orgregister.html')
+
+def postListingPageView(request) :
+    return render(request, 'organization/postlisting.html')
