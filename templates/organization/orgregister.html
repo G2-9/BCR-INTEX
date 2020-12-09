@@ -137,7 +137,8 @@
     }
 </style>
     <div class="main-block">
-        <form action="/">
+        <form name='form_organization_register' method='POST' action="{% url 'add_organization' %}">
+            {% csrf_token %}
             <h1 style='margin-top: 20px; color: rgb(20,20,20);'>Create a Company Account</h1>
             <div>
                 <label></label><input type="text" name="company_name" placeholder='Company Name*' required>
@@ -180,7 +181,7 @@
                     </ul> 
                 </div>
                 </fieldset> 
-            <button type="submit" href="/" style='margin: 30px 0 100px 0;'>Submit</button>
+            <button type="submit" style='margin: 30px 0 100px 0;'>Submit</button>
         </form>
     </div>
 {% endblock %}

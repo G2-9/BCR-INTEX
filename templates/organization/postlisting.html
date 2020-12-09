@@ -1,4 +1,5 @@
 {% extends 'organizationBase.html' %}
+{% load static %}
 {% block newcontent %}
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -189,15 +190,15 @@
     </style>
     <div class="testbox">
         <form action="/">
-            <div class="banner">
-                <h1>Post Job</h1>
+            <div class="banner" style="background: url({% static 'img/postjob_background.png' %}); background-size: 100%; background-repeat: none;">
+                <h1 style='font-size: 56px;'>Post Your Job</h1>
             </div>
             <p class="top-info" style='font-size: 16px; text-align: center; width: 80%; padding: 10px; margin-left: 10%;'>Thank you for your interest in working with us. Please fill out these basic job details to be able to post your listing to the public.</p>
             <div class="item">
                 <p>Job Title<span class="required">*</span></p>
                 <div class="name-item">
                     <input type="text" name="jname" placeholder="Name" required/>
-                    <input type="text" name="contractLength" placeholder="Contract Length" required/>
+                    <input type="text" name="contractLength" style='margin-right: 12px;' placeholder="Contract Length" required/>
                 </div>
             </div>
             <div class="contact-item">
