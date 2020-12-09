@@ -25,15 +25,16 @@ def addApplicantPageView(request) :
         new_applicant.last_name = request.POST.get('last_name')
         new_applicant.username = request.POST.get('username')
         new_applicant.email = request.POST.get('email')
-        #new_applicant.applicant_id = (((random.randint(209,1000) / 9) * 11))        # had to input an applicant_id FIX ME: AUTOFILL PK
+        new_applicant.applicant_id = (random.randint(209,10000))   # had to input an applicant_id FIX ME: AUTOFILL PK
 
         new_applicant.save()
 
         applicant_data = Applicant.objects.all()
 
         context = {
-            'all_applicants' : applicant_data
+            'all_applicants' : applicant_data,
+            'new_applicant' : new_applicant
         }
         return render(request, 'applicant/viewapplicant.html', context)
     else :
-        return HttpResponse("You're an idiot")
+        return HttpResponse("NOT FOUND")

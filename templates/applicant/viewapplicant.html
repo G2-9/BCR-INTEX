@@ -1,15 +1,49 @@
 {% extends 'applicantBase.html' %}
 {% load static %}
 {% block newcontent %}
-    {% for applicant in all_applicants %}
-        {% if applicant.first_name == 'mickey' %}
-        <ul>
-            <li>{{ applicant.first_name }}</li>
-            <li>{{ applicant.last_name }}</li>
-            <li>{{ applicant.username }}</li>
-            <li>{{ applicant.email }}</li>
-        </ul>
-        {% endif %}
-    {% endfor %}
+<style>
+    .verifyApp {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        left: 25%;
+        top: 25%;
+        background-color: rgb(20,20,20);
+        color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .colorwhite {
+        color: whitesmoke;
+    }
+    button {
+        position: absolute;
+        bottom: 10%;
+        width: 25%;
+        left: 37.5%;
+        height: 15%;
+        background-color: rgb(20,20,20);
+        border: 1px solid whitesmoke;
+        border-radius: 30px;
+        color: whitesmoke;
+    }
+
+        button:hover {
+            background-color: black;
+            font-weight: 600;
+            cursor: pointer;
+        }
+</style>
+    <div class='verifyApp'>
+        <p class='colorwhite'>Thank you for registering, {{ new_applicant.first_name | title }} {{ new_applicant.last_name | title }} </p>
+        <p class='colorwhite'>You will use your username and email in the future to log in: <br>
+                <h5 class='colorwhite'><span style='color: rgb(200,200,200);'>Username:</span> {{ new_applicant.username | lower}}</h5>
+                <h5 class='colorwhite'><span style='color: rgb(200,200,200);'>Email:</span> {{ new_applicant.email | lower }}</h5>
+        </p>
+        <button onclick="location.href='{% url 'listings_index' %}'">Search for jobs</button>
+    </div>
     <br><br><br><br><br><br>
 {% endblock %}
