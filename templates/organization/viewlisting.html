@@ -1,0 +1,52 @@
+{% extends 'organizationBase.html' %}
+{% load static %}
+{% block newcontent %}
+<style>
+    .verifyApp {
+        position: absolute;
+        width: 80%;
+        height: 60%;
+        left: 10%;
+        top: 22%;
+        background-color: rgb(20,20,20);
+        color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .colorwhite {
+        color: whitesmoke;
+    }
+    button {
+        position: absolute;
+        bottom: 5%;
+        width: 25%;
+        left: 37.5%;
+        height: 15%;
+        background-color: rgb(20,20,20);
+        border: 1px solid whitesmoke;
+        border-radius: 30px;
+        color: whitesmoke;
+    }
+
+        button:hover {
+            background-color: black;
+            font-weight: 600;
+            cursor: pointer;
+        }
+</style>
+    <div class='verifyApp'>
+        <h2 class='colorwhite'>Thank you for creating a job</h2> 
+        <span style='text-align: left; margin: 20px;'>
+            <h3 class='colorwhite'> &emsp; {{ new_listing.job_title | title }}</h3>
+            <p class='colorwhite'> &emsp; &emsp;{{ new_listing.city | upper }} - <span style='font-style: italic'>${{ new_listing.compensation }}</span> </p>
+            <br>  
+            <p class='colorwhite'> &emsp; &emsp;This job requires a committment for {{ new_listing.contracts | lower}}</p>
+            <p class='colorwhite' style='line-height: 10px;'> &emsp; &emsp;Applicants will be directed to apply externally to your company website: <span style='text-decoration: underline'>{{ new_listing.company_website }}</p>
+        </span>
+        <button onclick="location.href='{% url 'listings_index' %}'">View All Listings</button>
+    </div>
+    <br><br><br><br><br><br>
+{% endblock %}

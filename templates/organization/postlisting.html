@@ -189,7 +189,8 @@
       }
     </style>
     <div class="testbox">
-        <form action="/">
+        <form name='form_post_listing' method='POST' action="{% url 'view_listing' %}">
+          {% csrf_token %}
             <div class="banner" style="background: url({% static 'img/postjob_background.png' %}); background-size: 100%; background-repeat: none;">
                 <h1 style='font-size: 56px;'>Post Your Job</h1>
             </div>
@@ -197,33 +198,33 @@
             <div class="item">
                 <p>Job Title<span class="required">*</span></p>
                 <div class="name-item">
-                    <input type="text" name="jname" placeholder="Name" required/>
-                    <input type="text" name="contractLength" style='margin-right: 12px;' placeholder="Contract Length" required/>
+                    <input type="text" name="job_title" placeholder="Name" required/>
+                    <input type="text" name="contract_length" style='margin-right: 12px;' placeholder="Contract Length" required/>
                 </div>
             </div>
             <div class="contact-item">
                 <div class="item">
                     <p>Location<span class="required">*</span></p>
-                    <input type="text" name="location" placeholder="Location" required/>
+                    <input type="text" name="city" placeholder="City" required/>
                 </div>
                 <div class="item">
                     <p>Compensation<span class="required">*</span></p>
-                    <input type="text" name="name" required/>
+                    <input type="text" name="compensation" required/>
                 </div>
             </div>
             <div class="position-item">
                 <div class="item">
                     <p>Available start date<span class="required">*</span></p>
-                    <input type="date" name="bdate" required/>
+                    <input type="date" name="start_date" required/>
                     <i class="fas fa-calendar-alt" style='right: 20px;'></i>
                 </div>
             </div>
             <div class="item">
                 <p>Please enter the URL to your application here:</p>
-                <input type="text" name="providing"/>
+                <input type="text" name="company_website"/>
             </div>
             <div class="btn-block">
-              <button type="submit" href="/" style='margin: 20px; width: 20%;'>Post Job</button>
+              <button type="submit" style='margin: 20px; width: 20%;'>Post Job</button>
             </div>
         </form>
     </div>

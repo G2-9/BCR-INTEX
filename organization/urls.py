@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import indexPageView, searchOrganizationPageView, displayOrganizationPageView, addOrganizationPageView, registerOrganizationPageView, postListingPageView
+from .views import indexPageView, searchOrganizationPageView, displayOrganizationPageView, addOrganizationPageView, registerOrganizationPageView, postListingPageView, addListingPageView
 
 urlpatterns = [
+    path('viewListing/', addListingPageView, name='view_listing'),
     path('postListing/', postListingPageView, name='post_listing'),
     path('registerOrganization/', registerOrganizationPageView, name='register_organization'),
     path('searchOrganization/', searchOrganizationPageView, name='search_organization'),
