@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+# find . -path "*/migrations/*.py" -not -name "__init__.py" -delete     DELETES PREVIOUS MIGRATIONS
+# find . -path "*/migrations/*.pyc" -delete                             DELETES PREVIOUS MIGRATIONS
+
 from pathlib import Path
 import os
 import django_heroku
