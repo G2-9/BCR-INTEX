@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!scx7o$d*vlpj2sh2=%dg_)#x2yoqx&16ay^@ymm@-zb+d@()7'
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'blackcyber2-9.herokuapp.com']
 
 
 # Application definition
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     'applicant.apps.ApplicantConfig',
     'organization.apps.OrganizationConfig',
     'recommender.apps.RecommenderConfig',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'blackcyberrecruiter.urls'
@@ -88,6 +95,8 @@ DATABASES = {
         'HOST' : 'localhost'
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600)  # comment out if you want to use local database
+DATABASES['default'].update(db_from_env)                # comment out if you want to use local database
 
 
 # Password validation
@@ -131,3 +140,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blackcyberrecruiter/static')
 ] 
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# run in terminal:   Heroku config:set DISABLE_COLLECTSTATIC=1
+
+django_heroku.settings(locals())
