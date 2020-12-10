@@ -5,15 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Calibri, Arial, Verdana, Sans-Serif;
-            font-size: 10pt;
+            font-family: "Barlow", sans-serif;
+            font-size: 14px;
+        }
+
+        h3 {
+            width: 100%;
+            left: 50%;
+            padding-bottom: 10px;
+            font-size: 34px;
+        }
+
+        .formbox {
+            position: absolute;
+            height: 50%;
+            width: 50%;
+            left: 25%;
+            top: 25%;
+            border: 1px solid rgb(20,20,20);
+            border_radius: 10px;
+            box-shadow: 0 0 10px 0 rgb(20,20,20);
+            padding: 40px 0 0 0px;
+            text-align: center;
+        }
+
+        .formcontent {
+            width: 100%;
+        }
+
+        td {
+            font-family: 'Barlow', sans-serif;
+            color: rgb(20,20,20);
+        }
+
+        .abutton {
+            position: absolute;
+            width: 40%;
+            left: 30%;
+            background-color: rgb(20,20,20);
+            border: none;
+            border_radius: 20px;
+            box-shadow: 0 0 10px 0 rgb(150,150,150);
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .abutton:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px 0 rgb(110,110,110);
+        }
+
+        input {
+            margin-right: 50%;
+            width: 50%;
+            margin-left: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
     </style>
 
-    <form id="azure" method="GET" action="{% url 'azure_recommender' %}">
-      <table>
+    <form id="azure" class='formbox' method="GET" action="{% url 'azure_recommender' %}">
+      <table class='formcontent'>
         <tr>
-          <td colspan="2"><h3>job recommender</h3></td>
+          <td colspan="2"><h3>Job Recommender</h3></td>
         </tr>
         <tr>
           <td style="text-align: right;">Applicant ID:</td>
@@ -28,7 +82,7 @@
           <td><input type="text" id="matching_skills" name="matching_skills"></td>
         </tr>
         <tr>
-          <td style="text-align: right;"><button type='submit'>Find recommended jobs</button></td>
+          <td style="text-align: right;"><button type='submit' class='abutton'>Find recommended jobs</button></td>
           <td>{{ azure_job }}</td>
         </tr>
       </table>
