@@ -1,0 +1,32 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <title>Black Cyber Recruiter</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid" style='background-color: rgb(20, 20, 20);'>
+                <div class="navbar-header">
+                <a class="navbar-brand" style='color: rgb(200, 200, 200);' href="{% url 'homepages_index'%}">Black Cyber Recruiter</a>
+                </div>
+                <ul class="nav navbar-nav">
+                <li><a style='color: rgb(200, 200, 200);' href="{% url 'listings_index' %}">Jobs</a></li>
+                {% comment %} <li><a href="#">Page 1</a></li> {% endcomment %}
+                {% comment %} <li><a href="#">Page 2</a></li> {% endcomment %}
+                <li><a href="{% url 'about_us' %}" style='color: rgb(200, 200, 200);'>About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+        <footer style='position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgb(20,20,20); color: rgb(200, 200, 200); font-size: 12px; text-align: center; height: 40px; padding-top: 14px;'>
+            <p>&copy;Black Cyber Recruiter &nbsp; | &nbsp; <a href="{% url 'contact_us' %}" style='text-decoration: none; color: rgb(200, 200, 200)' onMouseOver='cursor: pointer;'>Contact Us</a></p>
+        </footer>  
+    </body>
+</html>

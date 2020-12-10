@@ -1,0 +1,103 @@
+{% extends 'organizationBase.html' %}
+{% load static %}
+{% block newcontent %}
+ <!-- Preloader Start --> 
+    <style>
+        li {
+            color: rgb(240, 240, 240);
+        }
+    </style>
+    <span style='background-color: black;'>
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="{% static 'img/skyriser.jpg' %}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-9 col-md-10">
+                                <div class="hero__caption">
+                                    <h1>Your Hiring Starts Here.</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Search Box -->
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <!-- form -->
+                                <form action="#" class="search-box" style='box-shadow: 0px 0px 100px 10px rgb(100, 100, 100);'>
+                                    <div class="input-form">
+                                        <input type="text" placeholder="Job Title or Keyword">
+                                    </div>
+                                    {% comment %} <div class="select-form">
+                                        <div class="select-itms">
+                                            <select name="select" id="select1">
+                                                <option value="">Location BD</option>
+                                                <option value="">Location PK</option>
+                                                <option value="">Location US</option>
+                                                <option value="">Location UK</option>
+                                            </select>
+                                        </div>
+                                    </div> {% endcomment %}
+                                    <div class="search-form">
+                                        <a href="#" class="btn head-btn1" style='background-color: rgb(20, 20, 20);'>Find job</a>
+                                    </div>	
+                                </form>	
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </span>
+        <!-- slider Area End-->
+       
+  <!-- JS here -->	
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="{% static js/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/price_rangs.js' %}"></script>
+        
+		<!-- One Page, Animated-HeadLin -->
+        <script src="{% static 'js/wow.min.js' %}"></script>
+		<script src="{% static 'js/animated.headline.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+		<script src="{% static 'js/jquery.sticky.js' %}"></script>
+        
+        <!-- contact js -->
+        <script src="{% static 'js/contact.js' %}"></script>
+        <script src="{% static 'js/jquery.form.js' %}"></script>
+        <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+{% endblock newcontent%}
