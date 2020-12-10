@@ -27,8 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#SECRET_KEY = '!scx7o$d*vlpj2sh2=%dg_)#x2yoqx&16ay^@ymm@-zb+d@()7'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '!scx7o$d*vlpj2sh2=%dg_)#x2yoqx&16ay^@ymm@-zb+d@()7'
+#SECRET_KEY = os.environ.get('SECRET_KEY')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
