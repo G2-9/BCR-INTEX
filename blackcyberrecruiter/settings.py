@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'homepages.apps.HomepagesConfig',
     'applicant.apps.ApplicantConfig',
     'organization.apps.OrganizationConfig',
+    'recommender.apps.RecommenderConfig',
 ]
 
 MIDDLEWARE = [
