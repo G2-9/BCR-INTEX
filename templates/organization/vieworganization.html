@@ -19,7 +19,7 @@
     .colorwhite {
         color: whitesmoke;
     }
-    button {
+    .abutton {
         position: absolute;
         bottom: 10%;
         width: 35%;
@@ -31,7 +31,7 @@
         color: whitesmoke;
     }
 
-        button:hover {
+        .abutton:hover {
             background-color: black;
             font-weight: 600;
             cursor: pointer;
@@ -42,7 +42,7 @@
         <p class='colorwhite'>You will use your email in the future to log in: <br>
                 <h5 class='colorwhite'><span style='color: rgb(200,200,200);'>Email:</span> {{ new_organization.email | lower }}</h5>
         </p>
-        <button onclick="location.href='{% url 'post_listing' %}'">Post your first listing</button>
+        <button class='abutton' onclick="location.href='{% url 'post_listing' %}'">Post your first listing</button>
     </div>
     <br><br><br><br><br><br>
 {% endblock %}

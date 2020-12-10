@@ -23,6 +23,50 @@
             <link rel="stylesheet" href="{% static 'css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+            <style>
+            .dropbtn {
+                background-color: rgb(20,20,20);
+                color: white;
+                padding: 16px;
+                font-size: 17px;
+                border: none;
+                font-family: "Barlow",sans-serif;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: rgb(20,20,20);
+                min-width: 190px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: red;
+                padding: 6px 8px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: black;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                cursor: pointer;
+            }
+        </style>
    </head>
 <body> 
     <header>
@@ -43,7 +87,16 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            {% comment %} <li><a href="{% url 'homepages_index' %}" style='color: rgb(240, 240, 240);'>Home</a></li> {% endcomment %}
+                                            <li>
+                                                <div class="dropdown">
+                                                    <button class="dropbtn">Organizations</button>
+                                                    <div class="dropdown-content">
+                                                        <a href="{% url 'delete_organization' %}" style='color: whitesmoke;'>Delete Organization</a>
+                                                        <a href="#" style='color: whitesmoke;'>Update Organization</a>
+                                                        {% comment %} <a href="#">Link 3</a> {% endcomment %}
+                                                    </div>
+                                                </div>
+                                            </li>
                                             <li><a href="{% url 'about_us2' %}" style=' color: rgb(240, 240, 240);'>About Us</a></li>
                                             <li><a href="{% url 'contact_us2' %}" style=' color: rgb(240, 240, 240);'>Contact</a></li>
                                         </ul>
@@ -51,9 +104,8 @@
                                 </div>          
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1" style='background-color: rgb(20, 20, 20); border: .5px solid whitesmoke;'>Log In</a>
                                     <a href="{% url 'post_listing' %}" class="btn head-btn1" style='background-color: rgb(20, 20, 20); border: .5px solid whitesmoke;'>Post a Job</a>
-                                    <a href="#" class="btn head-btn2" style='background-color: rgb(20, 20, 20); margin-left: 10px; border: none; padding: 10px;'>Log Out</a>
+                                    <a href="{% url 'homepages_index' %}" class="btn head-btn2" style='background-color: rgb(20, 20, 20); margin-left: 10px; border: none; padding: 10px;'>Log Out</a>
                                 </div>
                             </div>
                         </div>

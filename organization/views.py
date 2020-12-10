@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 import random
 from organization.models import Organization
 from listings.models import Listing
@@ -65,3 +66,12 @@ def addListingPageView(request) :
         return render(request, 'organization/viewlisting.html', context)
     else :
         return HttpResponse("NOT FOUND")
+
+def deleteOrganizationPageView(request) :
+    return render(request, 'organization/deleteorganization.html')
+
+def removeOrganizationPageView(request) :
+    organization = Organization.objects.get(company_name=request.POST['company_name'], email=request.POST['company_email'])
+    organization.delete()
+
+    return HttpResponseRedirect("/organization/")

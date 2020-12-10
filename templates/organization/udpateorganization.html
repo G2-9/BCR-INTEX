@@ -1,18 +1,17 @@
-{% extends 'applicantBase.html' %}
+{% extends 'organizationBase.html' %}
 {% block newcontent %}
 <style>
     .formbox {
         position: absolute;
-        height: 430px;
+        height: 50%;
         width: 50%;
         left: 25%;
-        top: 20%;
+        top: 25%;
         border: 1px solid rgb(20,20,20);
         border_radius: 10px;
         box-shadow: 0 0 10px 0 rgb(20,20,20);
-        padding: 20px 0 0 0px;
-        text-align: right;
-        padding-right: 10%;
+        padding: 40px 0 0 0px;
+        text-align: center;
     }
     
     .dbutton {
@@ -26,20 +25,18 @@
         height: 10%;
         font-weight: bold;
         right: 40%;
-        bottom: 3%;
+        bottom: 15%;
     }
     .dbutton:hover {
         cursor: pointer;
+
     }
 </style>
-<form class='formbox' name='form_update_applicant' method='POST' action="{% url 'alter_applicant' %}">
+<form class='formbox' name='form_update_applicant' method='POST' action="">
     {% csrf_token %}
-    <label for='first_name'>Enter the first name:</label>
+    <label for='first_name'>Enter the organization's name:</label>
     <input type="text" name='first_name' id='first_name'>
     <br><br>
-    <label for='last_name'>Enter the last name:</label>
-    <input type="text" name='last_name' id='last_name'> 
-    <br><br>     
     <label for='username'>Enter the username:</label>
     <input type="text" name="username" id='username'>
     <br><br>
@@ -54,10 +51,4 @@
     <br><br>
     <button type="submit" class='dbutton'>Update</button>
 </form> 
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<p>.</p>
 {% endblock %}

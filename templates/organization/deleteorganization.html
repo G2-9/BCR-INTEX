@@ -1,0 +1,46 @@
+{% extends 'organizationBase.html' %}
+{% block newcontent %}
+<style>
+    .formbox {
+        position: absolute;
+        height: 40%;
+        width: 50%;
+        left: 25%;
+        top: 30%;
+        border: 1px solid rgb(20,20,20);
+        border_radius: 10px;
+        box-shadow: 0 0 10px 0 rgb(20,20,20);
+        padding: 40px 0 0 0px;
+        text-align: center;
+    }
+    
+    .dbutton {
+        position: absolute;
+        background-color: rgb(170,0,0);
+        color: whitesmoke;
+        border: 1px solid black;
+        box-shadow: 0 2px 2px 0 rgb(100,100,100);
+        border-radius: 10px;
+        width: 30%;
+        height: 12%;
+        font-weight: bold;
+        right: 33%;
+        bottom: 15%;
+    }
+    
+    .dbutton:hover {
+        cursor: pointer;
+
+    }
+</style>
+<form name="form" method="POST" action="{% url 'remove_organization' %}" class='formbox'>
+    {% csrf_token %}
+    <label for='company_name'>Enter the company name:</label>
+    <input type="text" name='company_name' id='company_name'>
+    <br><br>
+    <label for='company_email'>Enter the company email:</label>
+    <input type="text" name='company_email' id='company_email'> 
+    <br><br> 
+    <button type="submit" class='dbutton'>Delete Organization</button>
+</form> 
+{% endblock %}
