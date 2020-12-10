@@ -75,3 +75,21 @@ def removeOrganizationPageView(request) :
     organization.delete()
 
     return HttpResponseRedirect("/organization/")
+
+def updateOrganizationPageView(request) :
+    return render(request, 'organization/updateorganization.html')
+
+def alterOrganizationPageView(request) :
+    if request.method == 'POST':
+        company_name = request.POST.get('company_name')
+        company_email = request.POST.get('company_email')
+        new_company_name = request.POST.get('new_company_name')
+        new_company_email = request.POST.get('new_company_email')
+
+        organization = Organization.objects.get(company_name=company_name, email=company_email)
+        organization.company_name = new_company_name
+        organization.email = new_company_email
+
+        organization.save()
+        
+        return HttpResponseRedirect("/organization/")
