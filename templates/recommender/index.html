@@ -1,5 +1,36 @@
 {% extends 'applicantBase.html' %}
 {% load static %}
 {% block newcontent %}
-<h1>recommendations</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Calibri, Arial, Verdana, Sans-Serif;
+            font-size: 10pt;
+        }
+    </style>
+
+    <form id="azure" method="GET" action="{% url 'azure_recommender' %}">
+      <table>
+        <tr>
+          <td colspan="2"><h3>job recommender</h3></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Applicant ID:</td>
+          <td><input type="text" id="user_id" name="user_id"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Job Title:</td>
+          <td><input type="text" id="job_title" name="job_title"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;">Number of Matching Skills:</td>
+          <td><input type="text" id="matching_skills" name="matching_skills"></td>
+        </tr>
+        <tr>
+          <td style="text-align: right;"><button type='submit'>Find recommended jobs</button></td>
+          <td>{{ azure_job }}</td>
+        </tr>
+      </table>
+    </form>
 {% endblock %}
