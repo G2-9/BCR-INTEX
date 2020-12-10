@@ -14,8 +14,8 @@ def registerPageView(request) :
 def deleteApplicantPageView(request) :
     return render(request, 'applicant/deleteapplicant.html')
 
-def searchApplicantsPageView(request) :
-    return render(request, 'applicant/searchapplicant.html')
+def updateApplicantsPageView(request) :
+    return render(request, 'applicant/updateapplicant.html')
 
 def removeApplicantPageView(request) :
     applicant = Applicant.objects.get(first_name=request.POST['first_name'], last_name=request.POST['last_name'], username=request.POST['username'])

@@ -46,7 +46,7 @@
             <p class='colorwhite'> &emsp; &emsp;This job requires a committment for {{ new_listing.contracts | lower}}</p>
             <p class='colorwhite' style='line-height: 10px;'> &emsp; &emsp;Applicants will be directed to apply externally to your company website: <span style='text-decoration: underline'>{{ new_listing.company_website }}</p>
         </span>
-        <button onclick="location.href='{% url 'listings_index' %}'">View All Listings</button>
+        {% comment %} <button onclick="location.href='{% url 'listings_index' %}'">View All Listings</button> {% endcomment %}
     </div>
     <br><br><br><br><br><br>
 {% endblock %}

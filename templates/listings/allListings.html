@@ -1,9 +1,50 @@
 {% extends 'applicantBase.html' %}
+{% load static %}
 {% block newcontent %}
-<h1>listings page</h1>
+<style>
+    .listingblock {
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 1px 2px 10px 0 rgb(100,100,100);
+        margin: 30px; 
+        padding: 20px;
+        width: 70%;
+    }
+
+    .dbutton {
+        position: relative;
+        width: 20%;
+        height: 15%;
+        padding: 10px;
+        margin: 20px;
+        right: 0;
+        top: 0;
+        background-color: rgb(20,20,20);
+        border: 1px solid rgb(100,100,100);
+        border-radius: 7px;
+        color: whitesmoke;
+    }
+
+        .dbutton:hover {
+            cursor: pointer;
+            background-color: black;
+        }
+</style>
+<div style='width: 100%; text-align: center; padding: 20px 0;'>
+    <h1>Job Listings</h1>
+</div>
 <ul>
-    {% for i in list %}
-        <li><h1>{{ i }}</h1></li>
+    {% for listing in listing_data %}
+        <div class='listingblock'>
+            <h3 class='colorwhite'> &emsp; {{ listing.job_title | title }}</h3>
+            <p class='colorwhite'> &emsp; &emsp;{{ listing.city | upper }} - <span style='font-style: italic'>${{ listing.compensation }}</span> </p>
+            <br>  
+            <p class='colorwhite'> &emsp; &emsp;This job requires a committment for {{ listing.contracts | lower}}</p>
+            <p class='colorwhite' style='line-height: 10px;'> &emsp; &emsp;Applicants will be directed to apply externally on your company website: <span style='text-decoration: underline'>{{ listing.company_website }}</p>
+            <p><button type='submit' class='dbutton' onclick="location.href='{% url 'listing_details' %}'">Listing Details</button></p>
+        </div>   
     {% endfor %}
 </ul>
 {% endblock %}
+
+     
